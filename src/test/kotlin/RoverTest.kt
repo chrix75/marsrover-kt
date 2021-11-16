@@ -8,10 +8,10 @@ import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.MethodSource
 
-class RoverTest {
+internal class RoverTest {
     @ParameterizedTest
     @MethodSource("turnLeftRover")
-    fun `turn rover on left`(origin: Direction, expected: Direction) {
+    internal fun `turn rover on left`(origin: Direction, expected: Direction) {
         val rover = Rover(FourCardinalDirectionsCompass(origin))
         rover.turn(Turn.LEFT)
         Assertions.assertEquals(expected, rover.direction)
@@ -19,7 +19,7 @@ class RoverTest {
 
     @ParameterizedTest
     @MethodSource("turnRightRover")
-    fun `turn rover on right`(origin: Direction, expected: Direction) {
+    internal fun `turn rover on right`(origin: Direction, expected: Direction) {
         val rover = Rover(FourCardinalDirectionsCompass(origin))
         rover.turn(Turn.RIGHT)
         Assertions.assertEquals(expected, rover.direction)
